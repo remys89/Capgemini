@@ -10,7 +10,7 @@ First, learn to get started with Docker after our presentation.
 We are going to deploy a Busybox container on our docker environment.
 Busybox is a small linux environment and a sandbox to play with.
 
-***docker pull busybox
+***docker pull busybox***
 
 ```sh
 $ docker pull busybox
@@ -21,7 +21,7 @@ latest: Pulling from library/busybox
 This way, we will download the image to our docker machine so its ready for use in a container.
 Check if the image is correctly downloaded.
 
-- docker images
+***docker images***
 
 ```sh
 $ docker images
