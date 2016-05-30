@@ -74,7 +74,7 @@ Create a new file in the container called "test.txt":
 
 _vi test.txt_
 
-Press "i" to insert some text, and when you are done, press *escape* and type *:wq*.
+Press "i" to insert some text, and when you are done, press **escape** and type **:wq**.
 This will save the file and creates it in the root directory of the busybox container.
 
 ```sh
