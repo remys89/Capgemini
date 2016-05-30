@@ -21,7 +21,7 @@ latest: Pulling from library/busybox
 This way, we will download the image to our docker machine so its ready for use in a container.
 Check if the image is correctly downloaded.
 
-***docker images***
+_docker images_
 
 ```sh
 $ docker images
