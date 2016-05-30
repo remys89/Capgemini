@@ -41,3 +41,20 @@ $ docker run busybox echo "hello world"
 hello world
 ```
 
+Now, check the status of the containers with the docker ps command
+
+_docker ps_
+
+What do you see ?
+Right, nothing. Thats because the container was executed with the hello world command, and then exited.
+Add the "-a" flag.
+
+_docker ps -a_
+
+Should be somehow the following output:
+
+```sh
+$ docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                     PORTS               NAMES
+901765e0ec64        busybox                   "echo 'hello world'"   2 minutes ago       Exited (0) 2 minutes ago                       backstabbing_liskov
+```
