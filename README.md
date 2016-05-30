@@ -82,3 +82,4 @@ This will save the file and creates it in the root directory of the busybox cont
 bin       etc       proc      sys       tmp       var
 dev       home      root      test.txt  usr
 ```
+Now, let's show you 
