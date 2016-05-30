@@ -28,3 +28,16 @@ $ docker images
 REPOSITORY                TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 busybox                   latest              sha256:47bcc        10 weeks ago        1.113 MB
 ```
+
+Ok, we are fine. 
+Now, lets try and start a container with this image, and use hello world as echo command:
+
+_docker run busybox echo "hello world"_
+
+Check your output:
+
+```sh
+$ docker run busybox echo "hello world"
+hello world
+```
+
