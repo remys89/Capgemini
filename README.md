@@ -10,7 +10,7 @@ First, learn to get started with Docker after our presentation.
 We are going to deploy a Busybox container on our docker environment.
 Busybox is a small linux environment and a sandbox to play with.
 
-***docker pull busybox***
+**docker pull busybox**
 
 ```sh
 $ docker pull busybox
