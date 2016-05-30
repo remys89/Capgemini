@@ -12,9 +12,10 @@ Busybox is a small linux environment and a sandbox to play with.
 
 - docker pull busybox
 
-> $ docker pull busybox
+```sh
+$ docker pull busybox
 Using default tag: latest
 latest: Pulling from library/busybox
-
+```
 
 This way, we will download the image to our docker hypervisor so its ready for use in a container.
