@@ -1,6 +1,7 @@
 # Docker workshop
 
 In front of you there is a laptop with Docker toolbox installed.
+Use Putty to make connection to your running docker host (docker@192.168.99.100).
 During the following exercises, you will learn to get along with Docker in the basic way of working, and be able to deploy small containers.
 If you have any questions, feel free to ask.
 
@@ -57,4 +58,27 @@ Should be somehow the following output:
 $ docker ps -a
 CONTAINER ID        IMAGE                     COMMAND                CREATED             STATUS                     PORTS               NAMES
 901765e0ec64        busybox                   "echo 'hello world'"   2 minutes ago       Exited (0) 2 minutes ago                       backstabbing_liskov
+```
+
+This verifies that the container has been shutdown.
+But, we wanna do more in the container, besides and echo command.
+Run in it as following:
+
+_docker run -it busybox sh_
+
+With this command, we are starting a new busybox container with an interactive shell so we can do some commands.
+Use the "ls" command to list everything inside the root directory.
+You should be seeing output with folders named as "bin", "dev", etc...
+
+Create a new file in the container called "test.txt":
+
+_vi test.txt_
+
+Press "i" to insert some text, and when you are done, press *escape* and type *:wq*.
+This will save the file and creates it in the root directory of the busybox container.
+
+```sh
+/ # ls
+bin       etc       proc      sys       tmp       var
+dev       home      root      test.txt  usr
 ```
