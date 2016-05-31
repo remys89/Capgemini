@@ -5,6 +5,8 @@ Use Putty to make connection to your running docker host (docker@192.168.99.100)
 During the following exercises, you will learn to get along with Docker in the basic way of working, and be able to deploy small containers.
 If you have any questions, feel free to ask.
 
+Link to putty: https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
+
 ## Basics
 
 First, learn to get started with Docker after our presentation.
