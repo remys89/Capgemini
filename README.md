@@ -100,6 +100,26 @@ Everybody knows wordpress. To show you, for example, how easy it is to deploy a 
 Wordpress usually works with a MySQL database. This database will be deployed along with the Wordpress container.
 Use the following command:
 
-_docker run --name WP-Cap --link some-mysql:mysql -d wordpress_
+_docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
+
+You will not have the MySQL image yet, but Docker will download this one from the hub for you.
+When it is ready, confirm that the MySQL container is up and running:
+
+_docker ps -a_
+
+```sh
+474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       some-mysql
+```
+
+Your MySQL container is running. Now, let's deploy our wordpress website with the following command:
+
+_docker run --name WP-Cap -p 0.0.0.0:8890:80 --link some-mysql:mysql -d wordpress_
+
+```sh
+--name = name of the container
+-p = Ports used in- and outside the container. The last port is the application port, the first port is the runtime port. This port will be used to approach the container with, i.e., your browser.
+--link = linking the wordpress container to the MySQL database
+-d = image to be used
+```
 
 
