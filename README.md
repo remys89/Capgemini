@@ -82,4 +82,24 @@ This will save the file and creates it in the root directory of the busybox cont
 bin       etc       proc      sys       tmp       var
 dev       home      root      test.txt  usr
 ```
-Now, let's show you 
+Now, let's show you what happens when we start a container with the same image again.
+
+_docker run -it busybox sh_
+
+When you are in prompt, list all files and folders in the root directory again. What do you notice after you created test.txt last time ?
+
+Everytime you start a new container, all changes will be gone. Unless you commit your work to a Docker image and repository, all the stuff you added to your container will be lost. The power of docker in this matter is being able to quickly deploy containers based on an image and repo you are using.
+
+Play around a bit with the busybox container, then leave it by typing exit.
+You know how to basicly deploy a container now, let's go a little bit more indept.
+
+## Deploying a website
+
+Everybody knows wordpress. To show you, for example, how easy it is to deploy a new wordpress website, we will use the power of our docker host. **Let's go !**
+
+Wordpress usually works with a MySQL database. This database will be deployed along with the Wordpress container.
+Use the following command:
+
+_docker run --name WP-Cap --link some-mysql:mysql -d wordpress_
+
+
