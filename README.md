@@ -100,7 +100,7 @@ Everybody knows wordpress. To show you, for example, how easy it is to deploy a 
 Wordpress usually works with a MySQL database. This database will be deployed along with the Wordpress container.
 Use the following command:
 
-_docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
+_docker run --name mysqlcap -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
 
 You will not have the MySQL image yet, but Docker will download this one from the hub for you.
 When it is ready, confirm that the MySQL container is up and running:
@@ -108,12 +108,12 @@ When it is ready, confirm that the MySQL container is up and running:
 _docker ps -a_
 
 ```sh
-474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       some-mysql
+474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlcap
 ```
 
 Your MySQL container is running. Now, let's deploy our wordpress website with the following command:
 
-_docker run --name WP-Cap -p 0.0.0.0:8890:80 --link some-mysql:mysql -d wordpress_
+_docker run --name WP-Cap -p 0.0.0.0:8890:80 --link mysqlcap:mysql -d wordpress_
 
 ```sh
 --name = name of the container
@@ -121,5 +121,19 @@ _docker run --name WP-Cap -p 0.0.0.0:8890:80 --link some-mysql:mysql -d wordpres
 --link = linking the wordpress container to the MySQL database
 -d = image to be used
 ```
+
+Now, check if your wordpress container is running. Go to your webbrowser and use the IP of your docker host (normally 192.168.99.100) and use the first port stated in the command before (8890)
+
+_http://192.168.99.100:8890_
+
+```sh
+docker@default:~$ docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS                      PORTS                          NAMES
+8c6fca021f6a        wordpress                 "/entrypoint.sh apach"   4 seconds ago       Up 2 seconds                0.0.0.0:8890->80/tcp           some-wordpress
+474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlcap
+```
+
+If everything went correctly, the installation of Wordpress will pop up.
+Deploy your website to check if everything is fine.
 
 
