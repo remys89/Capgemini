@@ -136,4 +136,13 @@ CONTAINER ID        IMAGE                     COMMAND                  CREATED  
 If everything went correctly, the installation of Wordpress will pop up.
 Deploy your website to check if everything is fine.
 
+## Challenge !
+
+Try to deploy a 
+
+- Gitlab environment
+- Kibana monitoring
+
+And show us what you got from this course !
+
 
