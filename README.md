@@ -139,6 +139,8 @@ CONTAINER ID        IMAGE                     COMMAND                  CREATED  
 If everything went correctly, the installation of Wordpress will pop up.
 Deploy your website to check if everything is fine.
 
+If you are in for it, deploy another Wordpress website on an other port. You will see you will have two websites on 1 machine.
+
 ## Challenge !
 
 Try to deploy a 
