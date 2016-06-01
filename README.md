@@ -6,6 +6,7 @@ During the following exercises, you will learn to get along with Docker in the b
 If you have any questions, feel free to ask.
 
 Link to putty: https://the.earth.li/~sgtatham/putty/latest/x86/putty.exe
+
 Link to userguide of Docker: https://docs.docker.com/engine/userguide/containers/usingdocker/
 
 ## Basics
