@@ -96,6 +96,8 @@ Everytime you start a new container, all changes will be gone. Unless you commit
 Play around a bit with the busybox container, then leave it by typing exit.
 You know how to basicly deploy a container now, let's go a little bit more indept.
 
+**NOTE: If you are starting a container with the logging visible, don't exit it. Just open a new Putty session to the docker container to see your container running and continue doing docker commands.**
+
 ## Deploying a website
 
 Everybody knows wordpress. To show you, for example, how easy it is to deploy a new wordpress website, we will use the power of our docker host. **Let's go !**
@@ -104,6 +106,12 @@ Wordpress usually works with a MySQL database. This database will be deployed al
 Use the following command:
 
 _docker run --name mysqlcap -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
+
+```sh
+--name = name of the container
+-e = entry in the configuration of the container
+-d = imagename including the latest tag of the application
+```
 
 You will not have the MySQL image yet, but Docker will download this one from the hub for you.
 When it is ready, confirm that the MySQL container is up and running:
