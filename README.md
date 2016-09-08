@@ -106,7 +106,7 @@ Everybody knows wordpress. To show you, for example, how easy it is to deploy a 
 Wordpress usually works with a MySQL database. This database will be deployed along with the Wordpress container.
 Use the following command:
 
-_docker run --name mysqlcap -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
+_docker run --name mysqlqnh -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest_
 
 ```sh
 --name = name of the container
@@ -120,12 +120,12 @@ When it is ready, confirm that the MySQL container is up and running:
 _docker ps -a_
 
 ```sh
-474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlcap
+474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlqnh
 ```
 
 Your MySQL container is running. Now, let's deploy our wordpress website with the following command:
 
-_docker run --name WP-Cap -p 0.0.0.0:8890:80 --link mysqlcap:mysql -d wordpress_
+_docker run --name WP-qnh -p 0.0.0.0:8890:80 --link mysqlqnh:mysql -d wordpress_
 
 ```sh
 --name = name of the container
@@ -142,7 +142,7 @@ _http://192.168.99.100:8890_
 docker@default:~$ docker ps -a
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS                      PORTS                          NAMES
 8c6fca021f6a        wordpress                 "/entrypoint.sh apach"   4 seconds ago       Up 2 seconds                0.0.0.0:8890->80/tcp           some-wordpress
-474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlcap
+474a177f6df8        mysql:latest              "docker-entrypoint.sh"   27 minutes ago      Up 27 minutes               3306/tcp                       mysqlqnh
 ```
 
 If everything went correctly, the installation of Wordpress will pop up.
